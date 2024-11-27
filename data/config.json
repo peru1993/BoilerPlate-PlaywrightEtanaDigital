@@ -1,0 +1,22 @@
+{
+    "Adminlogin": {
+        "username": "gopinath.r+a@etana.com",
+        "password": "SmartWork@1234"
+    },
+    "Investorlogin": {
+        "username": "gopinath.r+001@etana.com",
+        "password": "SmartWork@1234"
+    },
+    "InvalidAdminlogin": {
+        "username": "Gopinath+a@etana.com",
+        "password": "smartwork@1234"
+    },
+    "InvalidInvestorlogin": {
+        "username": "gobinath.r+001@etana.com",
+        "password": "smartWork@1234"
+    },
+    
+    "baseUrl": "https://etanadigital.net/login",
+    "baseUrl1": "https://etanadigital/login",
+    "projectTitle": "Etana Digital"
+}
