@@ -1,6 +1,4 @@
-
 const { defineConfig, devices, chromium } = require('@playwright/test');
-
 
 module.exports = defineConfig({
   testDir: './tests',
@@ -8,7 +6,7 @@ module.exports = defineConfig({
   timeout: 60000,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 2 : undefined,
   reporter: 'html',
   projects: [
     {

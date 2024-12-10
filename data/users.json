@@ -15,7 +15,11 @@
         "username": "gobinath.r+001@etana.com",
         "password": "smartWork@1234"
     },
-    
+    "emptyalert": "Please enter your email and password.",
+    "emptypasswordAlert":"Please enter your password.",
+    "emptyemailAlert":"Please enter your email.",
+    "invalidAlert":"Incorrect username or password.",
+    "adminText":"ADMIN",
     "baseUrl": "https://etanadigital.net/login",
     "baseUrl1": "https://etanadigital/login",
     "projectTitle": "Etana Digital"

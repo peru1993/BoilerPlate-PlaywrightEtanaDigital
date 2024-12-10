@@ -1,5 +1,4 @@
 const { BasePage } = require('./basePage');
-
 const locators = {
     usernameInput: '//input[@type="email"]',
     userPasswordInput: '//input[@type="password"]',
@@ -17,34 +16,34 @@ class LoginPage extends BasePage {
     }
 
     async withoutLoginCredentials() {
-        await this.click(locators.loginButton);
-        await this.verifyElement(locators.alertEmptyLocator, "Please enter your email and password.");
+        await this.waitAndClick(locators.loginButton);
+        return this.getElementText(locators.alertEmptyLocator, 'Alert for Empty Credentials');
     }
 
     async enterEmail(username) {
-        await this.fill(locators.usernameInput, username);
-        await this.click(locators.loginButton);
-        await this.verifyElement(locators.alertPasswordLocator, "Please enter your password.");
+        await this.waitAndFill(locators.usernameInput, username);
+        await this.waitAndClick(locators.loginButton);
+        return this.getElementText(locators.alertPasswordLocator, 'Alert for Empty Password');
     }
 
     async enterPassword(password) {
-        await this.fill(locators.userPasswordInput, password);
-        await this.click(locators.loginButton);
-        await this.verifyElement(locators.alertEmailLocator, "Please enter your email.");
+        await this.waitAndFill(locators.userPasswordInput, password);
+        await this.waitAndClick(locators.loginButton);
+        return this.getElementText(locators.alertEmailLocator,'Alert for Empty Email');
     }
 
     async invalidLogin(username, password) {
-        await this.fill(locators.usernameInput, username);
-        await this.fill(locators.userPasswordInput, password);
-        await this.click(locators.loginButton);
-        await this.verifyElement(locators.incorrectAlertLocator, "Incorrect username or password.");
+        await this.waitAndFill(locators.usernameInput, username);
+        await this.waitAndFill(locators.userPasswordInput, password);
+        await this.waitAndClick(locators.loginButton);
+        return this.getElementText(locators.incorrectAlertLocator,"Invalid Credentials Alert");
     }
 
     async validLogin(username, password) {
-        await this.fill(locators.usernameInput, username);
-        await this.fill(locators.userPasswordInput, password);
-        await this.click(locators.loginButton);
-        await this.verifyElement(locators.adminTextLocator, "ADMIN");
+        await this.waitAndFill(locators.usernameInput, username);
+        await this.waitAndFill(locators.userPasswordInput, password);
+        await this.waitAndClick(locators.loginButton);
+        return this.getElementText(locators.adminTextLocator);
     }
 }
 
